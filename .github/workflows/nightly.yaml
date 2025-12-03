@@ -1,8 +1,11 @@
 name: Nightly Build workflow
 
 on:
-    schedule:
-        - cron: "0 21 * * *"
+    pull_request: 
+        branches:
+          - develop
+    # schedule:
+    #     - cron: "0 21 * * *"
 jobs:
     ci:
         runs-on: ubuntu-latest

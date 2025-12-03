@@ -1,8 +1,11 @@
 name: Daily Build Workflow
 
 on:
-    schedule:
-        - cron: "0 * * * *"
+    pull_request: 
+        branches:
+          - develop
+    # schedule:
+    #     - cron: "0 * * * *"
 jobs:
     ci:
         runs-on: ubuntu-latest
