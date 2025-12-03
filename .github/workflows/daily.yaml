@@ -11,5 +11,5 @@ jobs:
             - run: echo build code and unit test
             - run: echo check for code quality and code coverage
             - run: echo check security issues by code scanning
-            - run: deploy to dev environment
-            - run: trigger tests
+            - run: echo deploy to dev environment
+            - run: echo trigger tests
