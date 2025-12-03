@@ -1,0 +1,16 @@
+name: Pull request workflow
+
+on: 
+    pull_request: 
+        branches:
+          - develop
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo clone code
+      - run: echo build code and unit test
+      - run: echo check for code quality and code coverage
+      - run: echo check security issues by code scanning
+      

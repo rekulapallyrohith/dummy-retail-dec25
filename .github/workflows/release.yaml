@@ -1,0 +1,40 @@
+name: Release Build
+
+on:
+    push:
+        branches:
+            - release
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo clone code
+            - run: echo build code and unit test
+            - run: echo check for code quality and code coverage
+            - run: echo check security issues by code scanning
+    ST:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo deploy to system test env
+            - run: echo run automated test from selenium
+            - run: echo publish results
+    PT:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo deploy to performance test env
+            - run: echo run automated test from jmeter
+            - run: echo publish results
+    SecT:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo deploy to security test env
+            - run: echo run automated test for burp suit
+            - run: echo publish results
+    UAT:
+        needs: 
+            - ci
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo deploy to UAT test env
+            - run: echo run automated test 
+            - run: echo publish results
